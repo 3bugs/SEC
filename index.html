@@ -1,0 +1,363 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>กลต.</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link href='https://fonts.googleapis.com/css?family=Prompt|Sarabun|Roboto' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <meta name="theme-color" content="#fafafa">
+
+  <style>
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      overflow: hidden;
+      background-color: #fff;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 100px;
+      padding-left: 0px;
+      border: 0px solid deeppink;
+      z-index: 99999;
+      box-shadow: 0px 5px 24px rgba(0, 0, 0, 0.13);
+    }
+
+    .menu-item {
+      display: flex;
+      align-self: stretch;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 154px;
+      cursor: pointer;
+    }
+
+    .img-logo {
+      width: 57px;
+      height: 57px;
+      margin-left: 50px;
+      margin-right: 25px;
+      margin-bottom: 8px;
+    }
+
+    .img-search {
+      margin-bottom: 3px;
+    }
+
+    .icon-label {
+      font-family: Sarabun;
+      font-style: normal;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .header {
+      font-family: Sarabun;
+      font-style: normal;
+      font-size: 20px;
+      font-weight: 500;
+      color: #005288;
+    }
+
+    .hero-image {
+      margin-top: 100px;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("img/banner.jpg");
+      height: 525px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+    }
+
+    .hero-text {
+      text-align: center;
+      position: absolute;
+      padding-bottom: 90px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+    }
+
+    .hero-text h1 {
+      font-family: Prompt;
+      font-style: normal;
+      font-size: 50px;
+      font-weight: bold;
+      margin: 15px;
+      padding: 0;
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.45);
+      color: white;
+    }
+
+    .hero-text p {
+      font-family: Sarabun;
+      font-style: normal;
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 37px;
+      margin-bottom: 30px;
+      padding: 0;
+      mix-blend-mode: normal;
+      opacity: 0.6;
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.45);
+    }
+
+    button {
+      font-family: Prompt;
+      font-style: normal;
+      font-size: 18px;
+      font-weight: 500;
+      border: none;
+      outline: 0;
+      display: inline-block;
+      padding: 15px 0;
+      color: #fff;
+      background-color: #8DC63F;
+      text-align: center;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+
+    .hero-text button:hover {
+      background-color: #729e31;
+    }
+
+    .hero-text button {
+      margin-top: 30px;
+      padding-left: 30px;
+      padding-right: 30px;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.55);
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: stretch;
+      width: 195px;
+      height: 270px;
+      padding: 0px 24px 30px;
+      background: #FFFFFF;
+      box-shadow: 0px 10px 24px rgba(0, 0, 0, 0.13);
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      font-family: Prompt;
+      font-style: normal;
+      font-size: 40px;
+      font-weight: bold;
+      margin: 0;
+      padding: 0;
+      color: #10375C;
+    }
+
+    #sec-event-header button.active {
+      font-family: Roboto;
+      font-style: normal;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 14px;
+      border: none;
+      outline: 0;
+      display: inline-block;
+      padding: 10px 15px;
+      color: #fff;
+      background-color: #10375C;
+      text-align: center;
+      cursor: pointer;
+      border-radius: 20px;
+    }
+
+    #sec-event-header button.inactive {
+      font-family: Roboto;
+      font-style: normal;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 14px;
+      border: none;
+      outline: 0;
+      display: inline-block;
+      padding: 10px 15px;
+      color: #fff;
+      background-color: #747171;
+      text-align: center;
+      cursor: pointer;
+      border-radius: 20px;
+    }
+
+  </style>
+</head>
+
+<body>
+<!--[if IE]>
+<p class="browserupgrade">คุณใช้บราวเซอร์ที่เก่าเกินไป กรุณา<a href="https://browsehappy.com/">อัพเกรดบราวเซอร์</a>เพื่อความปลอดภัยและประสบการณ์ที่ดีในการใช้งานเว็บไซต์นี้</p>
+<![endif]-->
+
+<div id="app">
+  <div class="navbar">
+    <div style="display: flex; align-items: center">
+      <img class="img-logo" src="img/logo.svg" alt="logo">
+      <div class="header">สำนักงานคณะกรรมการกำกับหลักทรัพย์และตลาดหลักทรัพย์</div>
+    </div>
+    <div style="display: flex; align-items: center; align-self: stretch">
+      <div class="menu-item">
+        <img class="img-search" src="img/ic_search.svg" alt="search icon">
+        <div class="icon-label" style="color: #005288;">Search</div>
+      </div>
+      <div class="menu-item" style="background-color: #8DC63F">
+        <img class="img-search" src="img/ic_menu.svg" alt="search icon">
+        <div class="icon-label" style="color: #fff;">Menu</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-image">
+    <div class="hero-text">
+      <h1>สำรวจตัวเอง</h1>
+      <p>In oculis quidem se esse admonere interesse enim maxime placeat, facere possimus, omnis. Et quidem faciunt, ut labore et accurate disserendum et harum quidem exercitus quid.</p>
+      <button>เริ่มแบบสำรวจ&nbsp;&nbsp;<i class="fa fa-chevron-right"></i></button>
+    </div>
+  </div>
+
+  <div style="position: relative; display: flex; flex-direction: column; margin:auto; bottom: 60px; width: 900px; border: 0px solid deeppink">
+    <div style="display: flex; width: 100%; justify-content: space-evenly">
+      <div class="card" style="margin-bottom: 55px">
+        <img src="img/menu01.svg" alt="menu 1" style="width: 100%">
+        <button style="margin-top: 20px">สำรวจตัวเอง&nbsp;&nbsp;<i class="fa fa-chevron-right"></i></button>
+      </div>
+      <div class="card" style="margin-bottom: 55px">
+        <img src="img/menu02.svg" alt="menu 2" style="width: 100%">
+        <button style="margin-top: 20px">ช่องทางระดมทุน&nbsp;&nbsp;<i class="fa fa-chevron-right"></i></button>
+      </div>
+      <div class="card" style="margin-bottom: 55px">
+        <img src="img/menu03.svg" alt="menu 3" style="width: 100%">
+        <button style="margin-top: 20px">เรียนรู้การระดมทุน&nbsp;&nbsp;<i class="fa fa-chevron-right"></i></button>
+      </div>
+    </div>
+    <div style="display: flex; width: 100%; justify-content: space-evenly">
+      <div class="card">
+        <img src="img/menu04.svg" alt="menu 4" style="width: 100%">
+        <button style="margin-top: 20px">SEC Event&nbsp;&nbsp;<i class="fa fa-chevron-right"></i></button>
+      </div>
+      <div class="card">
+        <img src="img/menu05.svg" alt="menu 5" style="width: 100%">
+        <button style="margin-top: 5px">คลินิกระดมทุน&nbsp;&nbsp;<i class="fa fa-chevron-right"></i></button>
+      </div>
+      <div class="card">
+        <img src="img/menu06.svg" alt="menu 6" style="width: 100%">
+        <button style="margin-top: 20px">พันธกิจ พันธมิตร&nbsp;&nbsp;<i class="fa fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <div style="width: 100%; background: #fff; padding: 40px 0 60px">
+    <div style="display: flex; flex-direction: column; margin: auto; width: 1000px">
+      <div id="sec-event-header" style="display: flex; align-items: center; margin-bottom: 10px">
+        <h1>SEC EVENT</h1>
+        <button class="active" style="margin-left: 60px">SEMINAR</button>
+        <button class="inactive" style="margin-left: 10px">WEBINAR</button>
+        <button class="inactive" style="margin-left: 10px">BUSINESS MATCHING</button>
+        <button class="inactive" style="margin-left: 10px">INFORMATION</button>
+      </div>
+      <div style="height: 523px; display: flex; justify-content: center; align-items: center; border: 2px solid blueviolet">
+        <img src="img/whale.png" alt="whale" style="float: right; width: 300px; margin: 30px">
+      </div>
+    </div>
+  </div>
+
+  <div style="width: 100%; background: #f8f8f8; padding: 60px 0">
+    <div style="display: flex; flex-direction: column; margin: auto; width: 1000px">
+      <div style="display: flex">
+        <h1>สื่อการเรียนรู้ระดมทุน</h1>
+      </div>
+      <div style="height: 523px; display: flex; justify-content: center; align-items: center; border: 2px solid blueviolet">
+        <img src="img/whale.png" alt="whale" style="float: right; width: 300px; margin: 30px">
+      </div>
+    </div>
+  </div>
+
+  <div style="margin: 30px 50px"><br><br><br><br><br><br><br>
+    <img src="img/whale.png" alt="whale" style="float: right; width: 300px; margin: 30px">
+    <p style="font-family: Sarabun; font-size: 18px">มีวาฬตัวนึงลอยว่ายน้ำมาดูเจ็บช้ำทรวงอุรากว่าที่เคย มันพยายามตามรักทรามเชย แต่สุดท้ายดันมาเกยตื้นน้ำตาย จงจำไว้ ว่ารักใคร อย่าทำให้ใจต้องเจ็บ
+      และโปรดจงจำไว้ ทำไมถึงเสียใจ เพราะเราทำตัวเราเอง
+      รักก็คือรัก หลงก็คือหลง ถ้าถามชาวประมง ก็คงไม่เข้าใจ เพราะฉันนั้นเป็นวาฬ ที่เกยตื้นน้ำตาย ใจสลายแหลกลงไปใต้ทะเล
+      ตัวฉันไม่เคยเรียนรู้มาก่อนแม่บังอรจะทำร้าย จนอกตรม ดวงใจของฉันช่างแสนระบมด้วยพิษร้ายที่ทำลายจากปากเธอ ปากบอกว่ารัก ใจบอกว่าแคร์ สุดท้ายไม่เหลียวแลปล่อยฉันเกยตื้นตาย และฉันคงต้องยอม ปล่อยตัวเธอ
+      กลืนน้ำลายกับคำร้ายที่กล่าวไว้ ว่า
+      ว่ารักก็คือรัก หลงก็คือหลง ถ้าถามชาวประมง ก็คงไม่เข้าใจ เพราะฉันนั้นเป็นวาฬ ที่เกย ตื้นน้ำตาย ใจสลายแหลกลงไปใต้ทะเล
+      เพราะรักก็คือรัก หลงก็คือหลง ถ้าถามชาวประมง ก็คงไม่เข้าใจ เพราะฉันนั้นเป็นวาฬ ที่เกย ตื้นน้ำตาย ใจสลายแหลกลงไปใต้ทะเล
+      เพราะรักก็คือรัก หลงก็คือหลง ถ้าถามชาวประมง ก็คงไม่เข้าใจ เพราะฉันนั้นเป็นวาฬ ที่เกย ตื้นน้ำตาย ใจสลายแหลกลงไปใต้ทะเล
+      เพราะฉันนั้นเป็นวาฬที่เกยตื้นน้ำตาย และสุดท้ายต้องมาตายเพราะรักเธอ
+      มีวาฬตัวนึงลอยว่ายน้ำมาดูเจ็บช้ำทรวงอุรากว่าที่เคย มันพยายามตามรักทรามเชย แต่สุดท้ายดันมาเกยตื้นน้ำตาย จงจำไว้ ว่ารักใคร อย่าทำให้ใจต้องเจ็บ และโปรดจงจำไว้ ทำไมถึงเสียใจ เพราะเราทำตัวเราเอง
+      รักก็คือรัก หลงก็คือหลง ถ้าถามชาวประมง ก็คงไม่เข้าใจ เพราะฉันนั้นเป็นวาฬ ที่เกยตื้นน้ำตาย ใจสลายแหลกลงไปใต้ทะเล
+      ตัวฉันไม่เคยเรียนรู้มาก่อนแม่บังอรจะทำร้าย จนอกตรม ดวงใจของฉันช่างแสนระบมด้วยพิษร้ายที่ทำลายจากปากเธอ ปากบอกว่ารัก ใจบอกว่าแคร์ สุดท้ายไม่เหลียวแลปล่อยฉันเกยตื้นตาย และฉันคงต้องยอม ปล่อยตัวเธอ
+      กลืนน้ำลายกับคำร้ายที่กล่าวไว้ ว่า
+      ว่ารักก็คือรัก หลงก็คือหลง ถ้าถามชาวประมง ก็คงไม่เข้าใจ เพราะฉันนั้นเป็นวาฬ ที่เกย ตื้นน้ำตาย ใจสลายแหลกลงไปใต้ทะเล
+      เพราะรักก็คือรัก หลงก็คือหลง ถ้าถามชาวประมง ก็คงไม่เข้าใจ เพราะฉันนั้นเป็นวาฬ ที่เกย ตื้นน้ำตาย ใจสลายแหลกลงไปใต้ทะเล
+      เพราะรักก็คือรัก หลงก็คือหลง ถ้าถามชาวประมง ก็คงไม่เข้าใจ เพราะฉันนั้นเป็นวาฬ ที่เกย ตื้นน้ำตาย ใจสลายแหลกลงไปใต้ทะเล
+      เพราะฉันนั้นเป็นวาฬที่เกยตื้นน้ำตาย และสุดท้ายต้องมาตายเพราะรักเธอ
+      มีวาฬตัวนึงลอยว่ายน้ำมาดูเจ็บช้ำทรวงอุรากว่าที่เคย มันพยายามตามรักทรามเชย แต่สุดท้ายดันมาเกยตื้นน้ำตาย จงจำไว้ ว่ารักใคร อย่าทำให้ใจต้องเจ็บ และโปรดจงจำไว้ ทำไมถึงเสียใจ เพราะเราทำตัวเราเอง
+      รักก็คือรัก หลงก็คือหลง ถ้าถามชาวประมง ก็คงไม่เข้าใจ เพราะฉันนั้นเป็นวาฬ ที่เกยตื้นน้ำตาย ใจสลายแหลกลงไปใต้ทะเล
+      ตัวฉันไม่เคยเรียนรู้มาก่อนแม่บังอรจะทำร้าย จนอกตรม ดวงใจของฉันช่างแสนระบมด้วยพิษร้ายที่ทำลายจากปากเธอ ปากบอกว่ารัก ใจบอกว่าแคร์ สุดท้ายไม่เหลียวแลปล่อยฉันเกยตื้นตาย และฉันคงต้องยอม ปล่อยตัวเธอ
+      กลืนน้ำลายกับคำร้ายที่กล่าวไว้ ว่า
+      ว่ารักก็คือรัก หลงก็คือหลง ถ้าถามชาวประมง ก็คงไม่เข้าใจ เพราะฉันนั้นเป็นวาฬ ที่เกย ตื้นน้ำตาย ใจสลายแหลกลงไปใต้ทะเล
+      เพราะรักก็คือรัก หลงก็คือหลง ถ้าถามชาวประมง ก็คงไม่เข้าใจ เพราะฉันนั้นเป็นวาฬ ที่เกย ตื้นน้ำตาย ใจสลายแหลกลงไปใต้ทะเล
+      เพราะรักก็คือรัก หลงก็คือหลง ถ้าถามชาวประมง ก็คงไม่เข้าใจ เพราะฉันนั้นเป็นวาฬ ที่เกย ตื้นน้ำตาย ใจสลายแหลกลงไปใต้ทะเล
+      เพราะฉันนั้นเป็นวาฬที่เกยตื้นน้ำตาย และสุดท้ายต้องมาตายเพราะรักเธอ</p>
+  </div>
+</div>
+
+<script src="js/vendor/modernizr-3.8.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-3.5.1.min.js"><\/script>')</script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+
+<!-- development version, includes helpful console warnings -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<!-- production version, optimized for size and speed -->
+<!--<script src="https://cdn.jsdelivr.net/npm/vue"></script>-->
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+  window.ga = function () {
+    ga.q.push(arguments)
+  };
+  ga.q = [];
+  ga.l = +new Date;
+  ga('create', 'UA-XXXXX-Y', 'auto');
+  ga('set', 'transport', 'beacon');
+  ga('send', 'pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async></script>
+
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: 'Hello Vue!',
+    },
+  });
+</script>
+</body>
+
+</html>
