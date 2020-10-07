@@ -32,10 +32,10 @@
   <div class="my-navbar">
     <div style="display: flex; align-items: center">
       <img class="img-logo" src="img/logo.svg" alt="logo" style="cursor: pointer">
-      <div class="header">สำนักงานคณะกรรมการกำกับหลักทรัพย์และตลาดหลักทรัพย์</div>
+      <div class="header d-none d-md-block">สำนักงานคณะกรรมการกำกับหลักทรัพย์และตลาดหลักทรัพย์</div>
     </div>
     <div style="display: flex; align-items: center; align-self: stretch">
-      <div id="menu-item-search" class="menu-item d-none d-md-flex">
+      <div id="menu-item-search" class="menu-item">
         <img class="img-search" src="img/ic_search.svg" alt="search icon">
         <div class="icon-label d-none d-md-block" style="color: #005288;">Search</div>
       </div>
@@ -73,22 +73,45 @@
     <div class="container d-none d-sm-block" style="border: 0px solid red">
       <div class="row">
         <div class="col-lg-4 col-sm-6 col-12" style="border: 0px solid blue">
-          <card-item button-text="สำรวจตัวเอง" img-src="img/menu01.svg" img-alt="menu 1"></card-item>
+          <flip-card button-text="สำรวจตัวเอง" img-src="img/menu01.svg" img-alt="menu 1"></flip-card>
         </div>
         <div class="col-lg-4 col-sm-6 col-12" style="border: 0px solid blue">
-          <card-item button-text="ช่องทางการระดมทุน" img-src="img/menu02.svg" img-alt="menu 2"></card-item>
+          <flip-card button-text="ช่องทางการระดมทุน" img-src="img/menu02.svg" img-alt="menu 2"></flip-card>
         </div>
         <div class="col-lg-4 col-sm-6 col-12" style="border: 0px solid blue">
-          <card-item button-text="สื่อการเรียนรู้ระดมทุน" img-src="img/menu03.svg" img-alt="menu 3"></card-item>
+          <flip-card button-text="สื่อการเรียนรู้ระดมทุน" img-src="img/menu03.svg" img-alt="menu 3"></flip-card>
         </div>
         <div class="col-lg-4 col-sm-6 col-12" style="border: 0px solid blue">
-          <card-item button-text="SEC Event" img-src="img/menu04.svg" img-alt="menu 4"></card-item>
+          <flip-card button-text="SEC Event" img-src="img/menu04.svg" img-alt="menu 4"></flip-card>
         </div>
         <div class="col-lg-4 col-sm-6 col-12" style="border: 0px solid blue">
-          <card-item button-text="คลินิกระดมทุน" img-src="img/menu05.svg" img-alt="menu 5" :button-margin-top="5"></card-item>
+          <flip-card button-text="คลินิกระดมทุน" img-src="img/menu05.svg" img-alt="menu 5" :button-margin-top="5"></flip-card>
         </div>
         <div class="col-lg-4 col-sm-6 col-12" style="border: 0px solid blue">
-          <card-item button-text="พันธกิจ พันธมิตร" img-src="img/menu06.svg" img-alt="menu 6"></card-item>
+          <flip-card button-text="พันธกิจ พันธมิตร" img-src="img/menu06.svg" img-alt="menu 6"></flip-card>
+        </div>
+      </div>
+    </div>
+
+    <div class="container d-sm-none d-xs-block" style="border: 0px solid red">
+      <div class="row">
+        <div class="col-12 d-flex flex-column mb-3">
+          <accordion-card title="สำรวจตัวเอง" button-text="สำรวจ" img-src="img/menu01.svg" img-alt="menu 1"></accordion-card>
+        </div>
+        <div class="col-12 d-flex flex-column mb-3">
+          <accordion-card title="ช่องทางการระดมทุน" button-text="ดูเพิ่มเติม" img-src="img/menu02.svg" img-alt="menu 2"></accordion-card>
+        </div>
+        <div class="col-12 d-flex flex-column mb-3">
+          <accordion-card title="สื่อการเรียนรู้ระดมทุน" button-text="ดูเพิ่มเติม" img-src="img/menu03.svg" img-alt="menu 3"></accordion-card>
+        </div>
+        <div class="col-12 d-flex flex-column mb-3">
+          <accordion-card title="SEC Event" button-text="ดูเพิ่มเติม" img-src="img/menu04.svg" img-alt="menu 4"></accordion-card>
+        </div>
+        <div class="col-12 d-flex flex-column mb-3">
+          <accordion-card title="คลินิกระดมทุน" button-text="ดูเพิ่มเติม" img-src="img/menu05.svg" img-alt="menu 5"></accordion-card>
+        </div>
+        <div class="col-12 d-flex flex-column mb-0">
+          <accordion-card title="พันธกิจ พันธมิตร" button-text="ดูเพิ่มเติม" img-src="img/menu06.svg" img-alt="menu 6"></accordion-card>
         </div>
       </div>
     </div>
@@ -143,16 +166,16 @@
       <div class="d-block d-sm-none">
         <div class="row mt-2 no-gutters">
           <div class="col-6 d-flex flex-column mb-2">
-            <button class="sec-event-button-active">SEMINAR</button>
+            <button class="sec-event-button-active mr-1">SEMINAR</button>
           </div>
           <div class="col-6 d-flex flex-column mb-2">
-            <button class="sec-event-button-inactive">WEBINAR</button>
+            <button class="sec-event-button-inactive ml-1">WEBINAR</button>
           </div>
           <div class="col-6 d-flex flex-column">
-            <button class="sec-event-button-inactive">BUSINESS MATCHING</button>
+            <button class="sec-event-button-inactive mr-1">BUSINESS MATCHING</button>
           </div>
           <div class="col-6 d-flex flex-column">
-            <button class="sec-event-button-inactive">INFORMATION</button>
+            <button class="sec-event-button-inactive ml-1">INFORMATION</button>
           </div>
         </div>
       </div>
@@ -167,11 +190,10 @@
               </div>
               <div class="event-details-container mt-0 mt-sm-1 mt-md-2 mt-lg-3 mr-0 mr-sm-2 mr-md-3 mr-lg-4">
                 <div style="flex: 1; flex-direction: column; padding: 25px 30px 0; border: 0px solid red">
-                  <p>Sun ・ Sep 16 2020, 8:40 PM</p>
-                  <h3>วิธีการระดมทุนให้ได้ตามเป้า ต้องทำอย่างไร วิธีการระดมทุนให้ได้ตามเป้า ต้องทำอย่างไร</h3>
+                  <h3 class="mb-3">วิธีการระดมทุนให้ได้ตามเป้า ต้องทำอย่างไร วิธีการระดมทุนให้ได้ตามเป้า ต้องทำอย่างไร</h3>
                   <p>วิธีการระดมทุนให้ได้ตามเป้า ต้องทำอย่างไร วิธีการระดมทุนให้ได้ตามเป้า ต้องทำอย่างไร วิธีการระดมทุนให้ได้ตามเป้า ต้องทำอย่างไร วิธีการระดมทุนให้ได้ตามเป้า ต้องทำอย่างไร
                     วิธีการระดมทุนให้ได้ตามเป้า ต้องทำอย่างไร วิธีการระดมทุนให้ได้ตามเป้า ต้องทำอย่างไร</p>
-                  <p>โดย : พร้อมเลิศ หล่อวิจิตร</p>
+                  <p>Sun ・ Sep 16 2020, 8:40 PM</p>
                 </div>
                 <button style="align-self: flex-start; padding: 20px 30px;">
                   <h5>ลงทะเบียนเข้าร่วม&nbsp;&nbsp;<i class="fa fa-chevron-right"></i></h5>
@@ -297,7 +319,46 @@
     methods: {}
   });
 
-  Vue.component('cardItem', {
+  Vue.component('accordionCard', {
+    template: `
+      <div class="accordion-card">
+      <div class="d-flex align-items-center">
+        <img class="mr-3" :src="imgSrc" :alt="imgAlt" style="width: 75px; height: 75px">
+        <h3 style="flex: 1; font-size: 22px">{{ title }}</h3>
+        <i class="fa fa-chevron-circle-down ml-2" style="font-size: 24px"></i>
+      </div>
+      <div class="accordion-card-hidden flex-column" style="padding: 0; margin: 0 0 12px">
+        <p>{{ dummyText }}</p>
+        <button><h5>{{ buttonText }}</h5></button>
+      </div>
+
+      </div>
+    `,
+    props: {
+      title: String,
+      buttonText: String,
+      imgSrc: String,
+      imgAlt: String,
+    },
+    data: function () {
+    },
+    computed: {
+      dummyText() {
+        let result = '';
+        for (let i = 0; i < 10; i++) {
+          result += `${this.title} `;
+        }
+        return result;
+      },
+    },
+    methods: {
+      handleClickCard: function () {
+        alert(`You clicked ${this.title}`);
+      }
+    },
+  });
+
+  Vue.component('flipCard', {
     template: `
       <div class="flip-card mb-4 mb-md-5" :style="marginBottomStyle" :onclick="handleClickCard">
       <div class="flip-card-inner">
@@ -369,6 +430,13 @@
   menu.on("click", function (e) {
     hamburgerButton.toggleClass("is-active");
     // Do something else, like open/close menu
+  });
+
+  $(document).ready(function () {
+    $('.accordion-card').click(function () {
+      $(this).find('.accordion-card-hidden').toggleClass('open');
+      $(this).find('i').toggleClass('rotate');
+    });
   });
 </script>
 

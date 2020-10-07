@@ -142,7 +142,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 5;
+  -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;
 }
 
@@ -288,6 +288,10 @@ a:hover * {
   font-size: 0.875rem;
 }
 
+#flip-card-container {
+  width: 100%;
+}
+
 @media (min-width: 576px) {
   #flip-card-container {
     width: 100%;
@@ -312,7 +316,6 @@ a:hover * {
 .flip-card {
   background-color: transparent;
   flex: 1;
-  //width: 243px;
   height: 330px;
   perspective: 1000px;
   cursor: pointer;
@@ -322,6 +325,46 @@ a:hover * {
   .flip-card {
     height: 300px;
   }
+}
+
+.accordion-card {
+  border-radius: 10px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.13);
+  background-color: white;
+  padding: 6px 20px 6px;
+  color: #8DC63F;
+}
+
+.accordion-card i {
+  transform: rotate(0deg);
+  transition-duration: 0.5s;
+}
+
+.accordion-card i.rotate {
+  transform: rotate(180deg);
+  transition-duration: 0.5s;
+}
+
+.accordion-card-hidden {
+  display: none;
+  max-height: 0;
+  color: transparent;
+  -webkit-transition: height, 0.5s linear;
+  -moz-transition: height, 0.5s linear;
+  -ms-transition: height, 0.5s linear;
+  -o-transition: height, 0.5s linear;
+  transition: height, 0.5s linear;
+}
+
+.accordion-card-hidden.open {
+  display: flex;
+  max-height: 500px;
+  color: inherit;
+  -webkit-transition: height, 0.5s linear;
+  -moz-transition: height, 0.5s linear;
+  -ms-transition: height, 0.5s linear;
+  -o-transition: height, 0.5s linear;
+  transition: height, 0.5s linear;
 }
 
 .flip-card-inner {
