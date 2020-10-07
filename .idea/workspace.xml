@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1548bc61-0a34-4e42-9ee9-4e634911b6a4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/css/hamburgers.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/event.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/info01.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/info02.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/info03.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/info04.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,12 +63,65 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1601613223383</updated>
-      <workItem from="1601613226839" duration="63575000" />
+      <workItem from="1601613226839" duration="63645000" />
+      <workItem from="1601864884441" duration="101000" />
+      <workItem from="1601865888686" duration="14704000" />
+      <workItem from="1601964842807" duration="16377000" />
+      <workItem from="1602036461671" duration="12843000" />
     </task>
+    <task id="LOCAL-00001" summary="หน้า index.html">
+      <created>1601772191768</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1601772191769</updated>
+    </task>
+    <task id="LOCAL-00002" summary="responsive หน้า index.html">
+      <created>1601975872588</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1601975872588</updated>
+    </task>
+    <task id="LOCAL-00003" summary="responsive หน้า index.html">
+      <created>1602046471297</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1602046471297</updated>
+    </task>
+    <task id="LOCAL-00004" summary="responsive หน้า index.html">
+      <created>1602047187969</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1602047187969</updated>
+    </task>
+    <task id="LOCAL-00005" summary="responsive หน้า index.html">
+      <created>1602047360279</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1602047360279</updated>
+    </task>
+    <task id="LOCAL-00006" summary="responsive navbar">
+      <created>1602050449649</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1602050449649</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="หน้า index.html" />
+    <MESSAGE value="responsive หน้า index.html" />
+    <MESSAGE value="responsive navbar" />
+    <option name="LAST_COMMIT_MESSAGE" value="responsive navbar" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1920" y="197" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601617425493">
@@ -85,6 +132,12 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2096" y="304" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.24.1920.1056/1920.0.1920.1080@1920.0.1920.1080" timestamp="1601613832291" />
+    <state x="0" y="336" width="1366" height="744" key="CommitChangelistDialog2" timestamp="1602050449580">
+      <screen x="0" y="312" width="1366" height="768" />
+    </state>
+    <state x="0" y="336" width="1366" height="744" key="CommitChangelistDialog2/1366.0.1920.1080/0.312.1366.768@0.312.1366.768" timestamp="1602050449580" />
+    <state x="1920" y="-4" width="1920" height="1084" key="CommitChangelistDialog2/65.24.1855.1056/1920.0.1920.1080@1920.0.1920.1080" timestamp="1601772191480" />
+    <state x="65" y="24" width="1855" height="1056" key="CommitChangelistDialog2/65.24.1855.1056@65.24.1855.1056" timestamp="1601975872365" />
     <state x="2225" y="439" width="743" height="198" key="Github.ShareDialog" timestamp="1601637012323">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -93,8 +146,14 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2130" y="225" key="Github.UntrackedFilesDialog/0.24.1920.1056/1920.0.1920.1080@1920.0.1920.1080" timestamp="1601637023762" />
-    <state x="1531" y="68" width="1655" height="912" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1601631181847">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state x="398" y="508" key="Vcs.Push.Dialog.v2" timestamp="1602050450846">
+      <screen x="0" y="312" width="1366" height="768" />
+    </state>
+    <state x="398" y="508" key="Vcs.Push.Dialog.v2/1366.0.1920.1080/0.312.1366.768@0.312.1366.768" timestamp="1602050450846" />
+    <state x="2480" y="275" key="Vcs.Push.Dialog.v2/65.24.1855.1056/1920.0.1920.1080@1920.0.1920.1080" timestamp="1601772193136" />
+    <state x="606" y="293" key="Vcs.Push.Dialog.v2/65.24.1855.1056@65.24.1855.1056" timestamp="1601975879685" />
+    <state x="1531" y="68" width="1655" height="912" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1601997830077">
+      <screen x="65" y="24" width="1855" height="1056" />
     </state>
     <state x="1531" y="68" width="1655" height="912" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.24.1920.1056/1920.0.1920.1080@1920.0.1920.1080" timestamp="1601631181847" />
     <state x="2140" y="223" key="svn.repositoryBrowser" timestamp="1601636970168">
