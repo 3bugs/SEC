@@ -245,6 +245,12 @@ h1 {
   color: #10375C;
 }
 
+@media (max-width: 767px) {
+  .h1 {
+    font-size: 36px;
+  }
+}
+
 h3 {
   font-family: Prompt;
   font-style: normal;
