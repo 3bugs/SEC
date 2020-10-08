@@ -1,0 +1,142 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid blue;
+}
+
+h1 {
+  font-family: Prompt;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 3rem;
+  line-height: 1.5em;
+  text-align: center;
+  color: #003558;
+}
+
+h2 {
+  font-family: Prompt;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.875rem;
+  line-height: 1.4em;
+  text-align: center;
+  color: #000000;
+}
+
+h3 {
+  font-family: Prompt;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.25rem;
+  line-height: 1.5em;
+  text-align: center;
+}
+
+button {
+  background: #10375C;
+  border-radius: 6px;
+  padding: 12px 25px;
+}
+
+.color-active {
+  color: #3877A0 !important;
+}
+
+.color-inactive {
+  color: #BDBDBD !important;
+}
+
+.main-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 100px;
+  width: 100%;
+  max-width: 1140px;
+  border: 1px solid red;
+}
+
+@media (max-width: 767px) {
+  .main-container {
+    margin-top: 60px;
+  }
+}
+
+.step-navbar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid pink;
+}
+
+.step-text {
+  display: flex;
+  justify-content: space-between;
+}
+
+.step-line-container {
+  display: flex;
+}
+
+.step-line {
+  flex: 1;
+  height: 12px;
+}
+
+.line-active {
+  border-bottom: 6px solid #8DC63F;
+}
+
+.line-inactive {
+  border-bottom: 6px solid #EBEBEB;
+}
+
+.survey-footer {
+  height: 100px;
+  border: 1px solid green;
+}
+
+.survey-main-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.survey-option-container {
+  display: flex;
+}
+
+.survey-option {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  background: #FFFFFF;
+  border: 2px solid #8DC63F;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.15);
+  border: 1px solid orangered;
+}
+
+.button-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid grey;
+}
+
+.decoration-image {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
