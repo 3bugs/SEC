@@ -61,9 +61,9 @@
     </div>
     <ul class="step-line">
       <li class="active"></li>
-      <li class="inactive"></li>
-      <li class="inactive"></li>
-      <li class="inactive"></li>
+      <li></li>
+      <li></li>
+      <li></li>
     </ul>
   </div>
 
@@ -184,11 +184,31 @@
       buttonIconClass: null,
     },
     {
-      questionText: 'ทดสอบคำถาม',
+      questionText: 'หัวข้อคำถามข้อที่ 2',
       choiceList: [
-        {text: 'ตัวเลือก\nลำดับที่ 1', value: false},
-        {text: 'ตัวเลือก\nลำดับที่ 2', value: false},
-        {text: 'ตัวเลือก\nลำดับที่ 3', value: false},
+        {text: 'ตัวเลือก\nลำดับที่ 2.1', value: false},
+        {text: 'ตัวเลือก\nลำดับที่ 2.2', value: false},
+        {text: 'ตัวเลือก\nลำดับที่ 2.3', value: false},
+      ],
+      buttonText: null,
+      buttonIconClass: null,
+    },
+    {
+      questionText: 'หัวข้อคำถามข้อที่ 3',
+      choiceList: [
+        {text: 'ตัวเลือก\nลำดับที่ 3.1', value: false},
+        {text: 'ตัวเลือก\nลำดับที่ 3.2', value: false},
+        {text: 'ตัวเลือก\nลำดับที่ 3.3', value: false},
+      ],
+      buttonText: null,
+      buttonIconClass: null,
+    },
+    {
+      questionText: 'หัวข้อคำถามข้อที่ 4',
+      choiceList: [
+        {text: 'ตัวเลือก\nลำดับที่ 4.1', value: false},
+        {text: 'ตัวเลือก\nลำดับที่ 4.2', value: false},
+        {text: 'ตัวเลือก\nลำดับที่ 4.3', value: false},
       ],
       buttonText: null,
       buttonIconClass: null,
@@ -306,6 +326,16 @@
           nextForm.fadeIn(500, () => {
             this.currentQuestion++;
           })
+        });
+
+        const currentQuestion = this.currentQuestion;
+        $('.step-line li').each((index, element) => {
+          console.log($(this).hasClass('active'));
+
+          $(this).removeClass('active');
+          if (index === currentQuestion) {
+            $(this).addClass('active');
+          }
         });
       }
     }

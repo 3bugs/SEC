@@ -97,14 +97,11 @@ button:disabled {
 .step-line li {
   flex: 1;
   height: 12px;
+  border-bottom: 6px solid #EBEBEB !important;
 }
 
 .step-line li.active {
-  border-bottom: 6px solid #8DC63F;
-}
-
-.step-line li.inactive {
-  border-bottom: 6px solid #EBEBEB;
+  border-bottom: 6px solid #8DC63F !important;
 }
 
 .survey-footer {
