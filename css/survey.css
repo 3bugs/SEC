@@ -42,6 +42,15 @@ button {
   background: #10375C;
   border-radius: 6px;
   padding: 12px 25px;
+  cursor: pointer;
+}
+
+button:hover:enabled {
+  filter: brightness(140%);
+}
+
+button:disabled {
+  background: #8E8B8B;
 }
 
 .color-active {
@@ -69,11 +78,11 @@ button {
   }
 }
 
-.step-navbar {
+.step-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: 1px solid pink;
+  border: 0px solid pink;
 }
 
 .step-text {
@@ -81,20 +90,23 @@ button {
   justify-content: space-between;
 }
 
-.step-line-container {
+.step-line {
   display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.step-line {
+.step-line li {
   flex: 1;
   height: 12px;
 }
 
-.line-active {
+.step-line li.active {
   border-bottom: 6px solid #8DC63F;
 }
 
-.line-inactive {
+.step-line li.inactive {
   border-bottom: 6px solid #EBEBEB;
 }
 
@@ -103,28 +115,59 @@ button {
   border: 1px solid green;
 }
 
-.survey-main-content {
+.survey-form {
   display: flex;
   flex-direction: column;
   flex: 1;
 }
 
-.survey-option-container {
+.survey-options {
   display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.survey-option {
+.survey-options > li {
   display: flex;
+  position: relative;
   flex: 1;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 150px;
+  box-sizing: border-box;
+  z-index: 998;
+}
+
+.survey-options > li:hover {
+  box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.15);
+}
+
+.survey-options > li.on {
   background: #FFFFFF;
   border: 2px solid #8DC63F;
-  box-sizing: border-box;
-  box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.15);
-  border: 1px solid orangered;
+  box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.15);
+  cursor: default;
+}
+
+.survey-options > li.off {
+  background: #FBFBFB;
+  border: 1px solid #E0E0E0;
+  cursor: pointer;
+}
+
+.survey-option-badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 0;
+  right: 0;
+  background: #8DC63F;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.15);
 }
 
 .button-container {
@@ -132,7 +175,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid grey;
+  border: 0px solid grey;
 }
 
 .decoration-image {

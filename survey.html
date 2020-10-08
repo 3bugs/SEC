@@ -53,36 +53,41 @@
 </div>
 
 <div class="main-container pl-5 pr-5">
-  <div class="step-navbar mt-5">
+  <div class="step-container mt-5">
     <div class="step-text">
       <h3 class="color-active">< กลับไปก่อนหน้า</h3>
       <h3><span class="color-active">01 /</span> <span class="color-inactive">04</span></h3>
       <h3 class="color-active">ยกเลิก / เริ่มใหม่</h3>
     </div>
-    <div class="step-line-container">
-      <div class="step-line line-active"></div>
-      <div class="step-line line-inactive"></div>
-      <div class="step-line line-inactive"></div>
-      <div class="step-line line-inactive"></div>
-    </div>
+    <ul class="step-line">
+      <li class="active"></li>
+      <li class="inactive"></li>
+      <li class="inactive"></li>
+      <li class="inactive"></li>
+    </ul>
   </div>
 
-  <div class="survey-main-content">
+  <div class="survey-form">
     <h3 class="color-inactive mt-5">คำถามที่ 1</h3>
     <h1>โปรดเลือกข้อมูลที่ตรงกับท่าน</h1>
-    <div class="survey-option-container mt-4">
-      <div class="survey-option mr-4">
-        <h2 style="border: 1px solid black">คุณได้ทำการ<br>จดทะเบียนบริษัท</h2>
-      </div>
-      <div class="survey-option mr-4">
+    <ul class="survey-options mt-4">
+      <li class="on mr-4">
+        <h2>คุณได้ทำการ<br>จดทะเบียนบริษัท</h2>
+        <div class="survey-option-badge">
+          <i class="fa fa-check" style="color: white"></i>
+        </div>
+      </li>
+      <li class="off mr-4">
         <h2>คุณไม่เคย<br>จดทะเบียนบริษัท</h2>
-      </div>
-      <div class="survey-option">
+      </li>
+      <li class="off">
         <h2>คุณคือวิสาหกิจ<br>เพื่อสังคม</h2>
-      </div>
-    </div>
+      </li>
+    </ul>
     <div class="button-container">
-      <button><h5>ต่อไป&nbsp;&nbsp;<i class="fa fa-chevron-right"></i></h5></button>
+      <button style="z-index: 1000">
+        <h5>ต่อไป&nbsp;&nbsp;<i class="fa fa-chevron-right"></i></h5>
+      </button>
     </div>
   </div>
 
@@ -91,10 +96,10 @@
   </div>
 </div>
 
-<div class="decoration-image">
+<div class="decoration-image" style="z-index: 997">
   <img src="img/curve.svg">
 </div>
-<div class="decoration-image">
+<div class="decoration-image" style="z-index: 999">
   <img src="img/man.svg" width="75%" height="75%">
 </div>
 
