@@ -23,7 +23,7 @@
   <meta name="theme-color" content="#fafafa">
 </head>
 
-<body style>
+<body>
 <!--[if IE]>
 <p class="browserupgrade">คุณใช้บราวเซอร์ที่เก่าเกินไป กรุณา<a href="https://browsehappy.com/">อัพเกรดบราวเซอร์</a>เพื่อความปลอดภัยและประสบการณ์ที่ดีในการใช้งานเว็บไซต์นี้</p>
 <![endif]-->
@@ -52,7 +52,7 @@
   </div>
 </div>
 
-<div class="main-container pl-5 pr-5">
+<div id="app" class="main-container pl-5 pr-5">
   <div class="step-container mt-5">
     <div class="step-text">
       <h3 class="color-active">< กลับไปก่อนหน้า</h3>
@@ -67,7 +67,9 @@
     </ul>
   </div>
 
-  <div class="survey-form">
+  <survey-form></survey-form>
+
+  <!--<div id="form1" class="survey-form">
     <h3 class="color-inactive mt-5">คำถามที่ 1</h3>
     <h1>โปรดเลือกข้อมูลที่ตรงกับท่าน</h1>
     <ul class="survey-options mt-4">
@@ -77,11 +79,35 @@
           <i class="fa fa-check" style="color: white"></i>
         </div>
       </li>
-      <li class="off mr-4">
+      <li class="mr-4">
         <h2>คุณไม่เคย<br>จดทะเบียนบริษัท</h2>
       </li>
-      <li class="off">
+      <li>
         <h2>คุณคือวิสาหกิจ<br>เพื่อสังคม</h2>
+      </li>
+    </ul>
+    <div class="button-container">
+      <button style="z-index: 1000" onclick="handleClickNext()">
+        <h5>ต่อไป&nbsp;&nbsp;<i class="fa fa-chevron-right"></i></h5>
+      </button>
+    </div>
+  </div>-->
+
+  <!--<div id="form2" class="survey-form" style="display: none">
+    <h3 class="color-inactive mt-5">คำถามที่ 2</h3>
+    <h1>โปรดเลือกข้อมูลที่ตรงกับท่าน</h1>
+    <ul class="survey-options mt-4">
+      <li class="on mr-4">
+        <h2>xxxxxxxxxx<br>yyyyyyyyyy</h2>
+        <div class="survey-option-badge">
+          <i class="fa fa-check" style="color: white"></i>
+        </div>
+      </li>
+      <li class="off mr-4">
+        <h2>xxxxxxxxxx<br>yyyyyyyyyy</h2>
+      </li>
+      <li class="off">
+        <h2>xxxxxxxxxx<br>yyyyyyyyyy</h2>
       </li>
     </ul>
     <div class="button-container">
@@ -89,10 +115,23 @@
         <h5>ต่อไป&nbsp;&nbsp;<i class="fa fa-chevron-right"></i></h5>
       </button>
     </div>
-  </div>
+  </div>-->
 
   <div class="survey-footer p-3 color-inactive text-center">
-    FOOTER
+    <div class="container">
+      <div class="row mb-2">
+        <div class="col-3"><a href="#">Link goes here</a></div>
+        <div class="col-3"><a href="#">Link goes here</a></div>
+        <div class="col-3"><a href="#">Link goes here</a></div>
+        <div class="col-3"><a href="#">Link goes here</a></div>
+      </div>
+      <div class="row">
+        <div class="col-3"><a href="#">Link goes here</a></div>
+        <div class="col-3"><a href="#">Link goes here</a></div>
+        <div class="col-3"><a href="#">Link goes here</a></div>
+        <div class="col-3"><a href="#">Link goes here</a></div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -133,132 +172,143 @@
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
 <script>
-  Vue.component('infoItem', {
+  const questionList = [
+    {
+      questionText: 'โปรดเลือกข้อมูลที่ตรงกับท่าน',
+      choiceList: [
+        {text: 'คุณได้ทำการ\nจดทะเบียนบริษัท', value: false},
+        {text: 'คุณไม่เคย\nจดทะเบียนบริษัท', value: false},
+        {text: 'คุณคือวิสาหกิจ\nเพื่อสังคม', value: false},
+      ],
+      buttonText: null,
+      buttonIconClass: null,
+    },
+    {
+      questionText: 'ทดสอบคำถาม',
+      choiceList: [
+        {text: 'ตัวเลือก\nลำดับที่ 1', value: false},
+        {text: 'ตัวเลือก\nลำดับที่ 2', value: false},
+        {text: 'ตัวเลือก\nลำดับที่ 3', value: false},
+      ],
+      buttonText: null,
+      buttonIconClass: null,
+    },
+  ];
+  let currentQuestion = 0;
+
+  /*Vue.component('surveyFormList', {
     template: `
-      <div class="info-item mb-3 mb-sm-4">
-      <div class="info-item-image-container" :style="image">
-      </div>
-      <div class="info-item-text">
-        <h4>{{ title }}</h4>
-        <p>{{ author }}</p>
-      </div>
-      </div>
+    <survey-form
+    v-for="(q, index) in questionList"
+    :question-number="index + 1"
+    :question-text="q.questionText"
+    :choice-list="q.choiceList"
+    :button-text="q.buttonText"
+    :button-icon-class="q.buttonIconClass"
+    :display="getDisplay(index)"></survey-form>
     `,
-    props: {
-      imgSrc: String,
-      title: {
-        type: String,
-        default: 'สื่อการเรียนรู้ระดมทุน สื่อการเรียนรู้ระดมทุน สื่อการเรียนรู้ระดมทุน สื่อการเรียนรู้ระดมทุน สื่อการเรียนรู้ระดมทุน',
-      },
-      author: String,
-    },
     data: function () {
-    },
-    computed: {
-      image() {
-        return {
-          "background-image": `url('img/${this.imgSrc}')`,
-        }
+      return {
+        questionList,
+        currentQuestion,
       }
-    },
-    methods: {}
-  });
-
-  Vue.component('accordionCard', {
-    template: `
-      <div class="accordion-card">
-      <div class="d-flex align-items-center">
-        <img class="mr-3" :src="imgSrc" :alt="imgAlt" style="width: 75px; height: 75px">
-        <h3 style="flex: 1; font-size: 20px">{{ title }}</h3>
-        <i class="fa fa-chevron-circle-down ml-2" style="font-size: 24px"></i>
-      </div>
-      <div class="accordion-card-hidden flex-column" style="padding: 0; margin: 0 0 12px">
-        <p>{{ dummyText }}</p>
-        <button><h5>{{ buttonText }}</h5></button>
-      </div>
-
-      </div>
-    `,
-    props: {
-      title: String,
-      buttonText: String,
-      imgSrc: String,
-      imgAlt: String,
-    },
-    data: function () {
-    },
-    computed: {
-      dummyText() {
-        let result = '';
-        for (let i = 0; i < 10; i++) {
-          result += `${this.title} `;
-        }
-        return result;
-      },
     },
     methods: {
-      handleClickCard: function () {
-        alert(`You clicked ${this.title}`);
-      }
+      getDisplay: function (index) {
+        return index === this.currentQuestion ? 'flex' : 'none';
+      },
     },
-  });
+  });*/
 
-  Vue.component('flipCard', {
+  Vue.component('surveyForm', {
     template: `
-      <div class="flip-card mb-4 mb-md-5" :style="marginBottomStyle" :onclick="handleClickCard">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <img :src="imgSrc" :alt="imgAlt" style="width: 100%">
-          <button :style="buttonMarginTopStyle">
-            <h5>{{ buttonText }}&nbsp;&nbsp;<i class="fa fa-chevron-right"></i></h5>
+      <div style="display: flex; flex: 1">
+      <div
+        v-for="(q, questionIndex) in questionList"
+        :id="'survey-form-' + questionIndex"
+        class="survey-form"
+        :style="'display: ' + getDisplay(questionIndex)"
+      >
+        <h3 class="color-inactive mt-5">คำถามที่ {{ (questionIndex + 1).toString() }}</h3>
+        <h1>{{ q.questionText }}</h1>
+        <ul class="survey-options mt-4">
+          <li
+            v-for="(choice, optionIndex) in q.choiceList"
+            :class="getClass(optionIndex, choice.value, q.choiceList)"
+            v-on:click="() => handleClickOption(questionIndex, optionIndex)"
+          >
+            <h2><span style="white-space: pre;">{{ choice.text }}</span></h2>
+            <div class="survey-option-badge" v-if="choice.value">
+              <i class="fa fa-check" style="color: white"></i>
+            </div>
+          </li>
+        </ul>
+        <div class="button-container">
+          <button style="z-index: 1000" v-on:click="handleClickNext">
+            <h5>{{ q.buttonText == null ? 'ต่อไป' : q.buttonText }}&nbsp;&nbsp;
+              <i :class="q.buttonIconClass == null ? 'fa fa-chevron-right' : q.buttonIconClass"></i>
+            </h5>
           </button>
         </div>
-        <div class="flip-card-back">
-          <h5>{{ buttonText }}&nbsp;<i class="fa fa-chevron-circle-right"></i></h5>
-          <p style="margin-top: 10px">{{ dummyText }}</p>
-        </div>
       </div>
       </div>
     `,
     props: {
-      buttonText: String,
-      imgSrc: String,
-      imgAlt: String,
-      buttonMarginTop: {
-        type: Number,
-        default: 25,
+      /*questionNumber: Number,
+      questionText: String,
+      choiceList: Array,
+      buttonText: {
+        type: String,
+        default: 'ต่อไป',
       },
-      marginBottom: {
-        type: Number,
-        default: 0,
+      buttonIconClass: {
+        type: String,
+        default: 'fa fa-chevron-right',
       },
+      display: String,*/
     },
     data: function () {
-    },
-    computed: {
-      buttonMarginTopStyle() {
-        return {
-          "margin-top": `${this.buttonMarginTop}px`,
-        }
-      },
-      marginBottomStyle() {
-        return {
-          "margin-bottom": `${this.marginBottom}px`,
-        }
-      },
-      dummyText() {
-        let result = '';
-        for (let i = 0; i < 10; i++) {
-          result += `${this.buttonText} `;
-        }
-        return result;
-      },
-    },
-    methods: {
-      handleClickCard: function () {
-        alert(`You clicked ${this.buttonText}`);
+      return {
+        questionList,
+        currentQuestion: 0,
       }
     },
+    methods: {
+      getClass(index, value, choiceList) {
+        let cl = '';
+        if (value) {
+          cl += 'on'
+        }
+        if (index !== choiceList.length - 1) {
+          cl += ' mr-4';
+        }
+        return cl;
+      },
+      getDisplay(index) {
+        return index === this.currentQuestion ? 'flex' : 'none';
+      },
+      handleClickOption(questionIndex, optionIndex) {
+        this.questionList[this.currentQuestion].choiceList.forEach(choice => choice.value = false);
+        this.questionList[this.currentQuestion].choiceList[optionIndex].value = true;
+      },
+      handleClickNext() {
+        if (this.questionList[this.currentQuestion].choiceList.find(choice => choice.value) == null) {
+          alert('กรุณาเลือกคำตอบ');
+          return;
+        } else if (this.currentQuestion === this.questionList.length - 1) {
+          alert('จบ flow, หน้าสรุปผลยังทำไม่เสร็จ :D');
+          return;
+        }
+
+        const currentForm = $('#survey-form-' + this.currentQuestion);
+        const nextForm = $('#survey-form-' + (this.currentQuestion + 1));
+        currentForm.fadeOut(500, () => {
+          nextForm.fadeIn(500, () => {
+            this.currentQuestion++;
+          })
+        });
+      }
+    }
   });
 
   const app = new Vue({
@@ -277,19 +327,37 @@
     // Do something else, like open/close menu
   });
 
-  $(document).ready(function () {
+  /*document.addEventListener('DOMContentLoaded', function () {
+    new Splide('#image-slider').mount();
+  });*/
+
+  /*function handleClickNext() {
+    const form1 = $('#form1');
+    const form2 = $('#form2');
+    form2.hide();
+    form1.fadeOut(600, () => {
+      //form1.hide();
+      $('#form2').fadeIn(600, () => {
+
+      });
+    });
+  }*/
+
+  $(function () {
     $('.accordion-card').click(function () {
-      $(this).find('.accordion-card-hidden').toggleClass('open');
+      $(this).find('.accordion-card-hidden').toggleClass('on');
       $(this).find('i').toggleClass('rotate');
     });
   });
 </script>
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!--<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+<!--<script src="node_modules/@splidejs/splide/dist/js/splide.min.js"></script>-->
 </body>
 
 </html>

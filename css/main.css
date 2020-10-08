@@ -78,7 +78,7 @@ p {
   font-style: normal;
   font-size: 1rem;
   font-weight: normal;
-  margin-top: 6px;
+  margin-top: 0.375em;
   color: #8D8B8B;
   mix-blend-mode: normal;
   line-height: 1.75em;
@@ -87,6 +87,12 @@ p {
 
 a:hover * {
   color: #72A927 !important;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
 button {

@@ -73,22 +73,22 @@
     <div class="container d-none d-sm-block" style="border: 0px solid red">
       <div class="row">
         <div class="col-lg-4 col-sm-6 col-12" style="border: 0px solid blue">
-          <flip-card button-text="สำรวจตัวเอง" img-src="img/menu01.svg" img-alt="menu 1"></flip-card>
+          <flip-card :id="0" button-text="สำรวจตัวเอง" img-src="img/menu01.svg" img-alt="menu 1"></flip-card>
         </div>
         <div class="col-lg-4 col-sm-6 col-12" style="border: 0px solid blue">
-          <flip-card button-text="ช่องทางการระดมทุน" img-src="img/menu02.svg" img-alt="menu 2"></flip-card>
+          <flip-card :id="1" button-text="ช่องทางการระดมทุน" img-src="img/menu02.svg" img-alt="menu 2"></flip-card>
         </div>
         <div class="col-lg-4 col-sm-6 col-12" style="border: 0px solid blue">
-          <flip-card button-text="สื่อการเรียนรู้ระดมทุน" img-src="img/menu03.svg" img-alt="menu 3"></flip-card>
+          <flip-card :id="2" button-text="สื่อการเรียนรู้ระดมทุน" img-src="img/menu03.svg" img-alt="menu 3"></flip-card>
         </div>
         <div class="col-lg-4 col-sm-6 col-12" style="border: 0px solid blue">
-          <flip-card button-text="SEC Event" img-src="img/menu04.svg" img-alt="menu 4"></flip-card>
+          <flip-card :id="3" button-text="SEC Event" img-src="img/menu04.svg" img-alt="menu 4"></flip-card>
         </div>
         <div class="col-lg-4 col-sm-6 col-12" style="border: 0px solid blue">
-          <flip-card button-text="คลินิกระดมทุน" img-src="img/menu05.svg" img-alt="menu 5" :button-margin-top="5"></flip-card>
+          <flip-card :id="4" button-text="คลินิกระดมทุน" img-src="img/menu05.svg" img-alt="menu 5" :button-margin-top="5"></flip-card>
         </div>
         <div class="col-lg-4 col-sm-6 col-12" style="border: 0px solid blue">
-          <flip-card button-text="พันธกิจ พันธมิตร" img-src="img/menu06.svg" img-alt="menu 6"></flip-card>
+          <flip-card :id="5" button-text="พันธกิจ พันธมิตร" img-src="img/menu06.svg" img-alt="menu 6"></flip-card>
         </div>
       </div>
     </div>
@@ -379,7 +379,7 @@
 
   Vue.component('flipCard', {
     template: `
-      <div class="flip-card mb-4 mb-md-5" :style="marginBottomStyle" :onclick="handleClickCard">
+      <div class="flip-card mb-4 mb-md-5" :style="marginBottomStyle" v-on:click="() => handleClickCard(id)">
       <div class="flip-card-inner">
         <div class="flip-card-front">
           <img :src="imgSrc" :alt="imgAlt" style="width: 100%">
@@ -395,6 +395,7 @@
       </div>
     `,
     props: {
+      id: Number,
       buttonText: String,
       imgSrc: String,
       imgAlt: String,
@@ -429,8 +430,13 @@
       },
     },
     methods: {
-      handleClickCard: function () {
-        alert(`You clicked ${this.buttonText}`);
+      handleClickCard: function (id) {
+        //alert(`You clicked ${this.buttonText}`);
+        switch (id) {
+          case 0:
+            window.location.href = 'survey.html';
+            break;
+        }
       }
     },
   });
@@ -451,7 +457,7 @@
     // Do something else, like open/close menu
   });
 
-  $(document).ready(function () {
+  $(function() {
     $('.accordion-card').click(function () {
       $(this).find('.accordion-card-hidden').toggleClass('open');
       $(this).find('i').toggleClass('rotate');
