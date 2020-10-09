@@ -53,7 +53,7 @@
 </div>
 
 <div id="app" class="main-container pl-5 pr-5">
-  <div class="step-container mt-5">
+  <!--<div class="step-container mt-5">
     <div class="step-text">
       <h3 class="color-active">< กลับไปก่อนหน้า</h3>
       <h3><span class="color-active">01 /</span> <span class="color-inactive">04</span></h3>
@@ -65,9 +65,11 @@
       <li></li>
       <li></li>
     </ul>
-  </div>
+  </div>-->
 
-  <survey-form></survey-form>
+  <div class="survey-form-container">
+    <survey-form></survey-form>
+  </div>
 
   <!--<div id="form1" class="survey-form">
     <h3 class="color-inactive mt-5">คำถามที่ 1</h3>
@@ -88,30 +90,6 @@
     </ul>
     <div class="button-container">
       <button style="z-index: 1000" onclick="handleClickNext()">
-        <h5>ต่อไป&nbsp;&nbsp;<i class="fa fa-chevron-right"></i></h5>
-      </button>
-    </div>
-  </div>-->
-
-  <!--<div id="form2" class="survey-form" style="display: none">
-    <h3 class="color-inactive mt-5">คำถามที่ 2</h3>
-    <h1>โปรดเลือกข้อมูลที่ตรงกับท่าน</h1>
-    <ul class="survey-options mt-4">
-      <li class="on mr-4">
-        <h2>xxxxxxxxxx<br>yyyyyyyyyy</h2>
-        <div class="survey-option-badge">
-          <i class="fa fa-check" style="color: white"></i>
-        </div>
-      </li>
-      <li class="off mr-4">
-        <h2>xxxxxxxxxx<br>yyyyyyyyyy</h2>
-      </li>
-      <li class="off">
-        <h2>xxxxxxxxxx<br>yyyyyyyyyy</h2>
-      </li>
-    </ul>
-    <div class="button-container">
-      <button style="z-index: 1000">
         <h5>ต่อไป&nbsp;&nbsp;<i class="fa fa-chevron-right"></i></h5>
       </button>
     </div>
@@ -176,9 +154,9 @@
     {
       questionText: 'โปรดเลือกข้อมูลที่ตรงกับท่าน',
       choiceList: [
-        {text: 'คุณได้ทำการ\nจดทะเบียนบริษัท', value: false},
-        {text: 'คุณไม่เคย\nจดทะเบียนบริษัท', value: false},
-        {text: 'คุณคือวิสาหกิจ\nเพื่อสังคม', value: false},
+        {text: 'คุณได้ทำการ\nจดทะเบียนบริษัท', value: false, nextQuestion: 1},
+        {text: 'คุณไม่เคย\nจดทะเบียนบริษัท', value: false, nextQuestion: 2},
+        {text: 'คุณคือวิสาหกิจ\nเพื่อสังคม', value: false, nextQuestion: 0},
       ],
       buttonText: null,
       buttonIconClass: null,
@@ -186,9 +164,9 @@
     {
       questionText: 'หัวข้อคำถามข้อที่ 2',
       choiceList: [
-        {text: 'ตัวเลือก\nลำดับที่ 2.1', value: false},
-        {text: 'ตัวเลือก\nลำดับที่ 2.2', value: false},
-        {text: 'ตัวเลือก\nลำดับที่ 2.3', value: false},
+        {text: 'ตัวเลือก\nลำดับที่ 2.1', value: false, nextQuestion: 2},
+        {text: 'ตัวเลือก\nลำดับที่ 2.2', value: false, nextQuestion: 2},
+        {text: 'ตัวเลือก\nลำดับที่ 2.3', value: false, nextQuestion: 0},
       ],
       buttonText: null,
       buttonIconClass: null,
@@ -196,9 +174,9 @@
     {
       questionText: 'หัวข้อคำถามข้อที่ 3',
       choiceList: [
-        {text: 'ตัวเลือก\nลำดับที่ 3.1', value: false},
-        {text: 'ตัวเลือก\nลำดับที่ 3.2', value: false},
-        {text: 'ตัวเลือก\nลำดับที่ 3.3', value: false},
+        {text: 'ตัวเลือก\nลำดับที่ 3.1', value: false, nextQuestion: 0},
+        {text: 'ตัวเลือก\nลำดับที่ 3.2', value: false, nextQuestion: 0},
+        {text: 'ตัวเลือก\nลำดับที่ 3.3', value: false, nextQuestion: 0},
       ],
       buttonText: null,
       buttonIconClass: null,
@@ -242,7 +220,7 @@
 
   Vue.component('surveyForm', {
     template: `
-      <div style="display: flex; flex: 1">
+      <div class="survey-form-container">
       <div
         v-for="(q, questionIndex) in questionList"
         :id="'survey-form-' + questionIndex"
