@@ -341,7 +341,7 @@
   Vue.component('accordionCard', {
     template: `
       <div class="accordion-card">
-      <div class="d-flex align-items-center">
+      <div class="d-flex align-items-center" style="font-size: 24px">
         <img class="mr-3" :src="imgSrc" :alt="imgAlt" style="width: 75px; height: 75px">
         <h3 style="flex: 1; font-size: 20px">{{ title }}</h3>
         <i class="fa fa-chevron-circle-down ml-2" style="font-size: 24px"></i>
@@ -457,7 +457,7 @@
     // Do something else, like open/close menu
   });
 
-  $(function() {
+  $(function () {
     $('.accordion-card').click(function () {
       $(this).find('.accordion-card-hidden').toggleClass('open');
       $(this).find('i').toggleClass('rotate');
@@ -465,7 +465,7 @@
   });
 </script>
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"

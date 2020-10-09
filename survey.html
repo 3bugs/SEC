@@ -221,31 +221,6 @@
       buttonIconClass: null,
     },
   ];
-  let currentQuestion = 0;
-
-  /*Vue.component('surveyFormList', {
-    template: `
-    <survey-form
-    v-for="(q, index) in questionList"
-    :question-number="index + 1"
-    :question-text="q.questionText"
-    :choice-list="q.choiceList"
-    :button-text="q.buttonText"
-    :button-icon-class="q.buttonIconClass"
-    :display="getDisplay(index)"></survey-form>
-    `,
-    data: function () {
-      return {
-        questionList,
-        currentQuestion,
-      }
-    },
-    methods: {
-      getDisplay: function (index) {
-        return index === this.currentQuestion ? 'flex' : 'none';
-      },
-    },
-  });*/
 
   Vue.component('surveyForm', {
     template: `
@@ -292,20 +267,6 @@
         </div>
       </div>
     `,
-    props: {
-      /*questionNumber: Number,
-      questionText: String,
-      choiceList: Array,
-      buttonText: {
-        type: String,
-        default: 'ต่อไป',
-      },
-      buttonIconClass: {
-        type: String,
-        default: 'fa fa-chevron-right',
-      },
-      display: String,*/
-    },
     data: function () {
       return {
         questionList,
@@ -381,22 +342,6 @@
     // Do something else, like open/close menu
   });
 
-  /*document.addEventListener('DOMContentLoaded', function () {
-    new Splide('#image-slider').mount();
-  });*/
-
-  /*function handleClickNext() {
-    const form1 = $('#form1');
-    const form2 = $('#form2');
-    form2.hide();
-    form1.fadeOut(600, () => {
-      //form1.hide();
-      $('#form2').fadeIn(600, () => {
-
-      });
-    });
-  }*/
-
   $(function () {
     $('.accordion-card').click(function () {
       $(this).find('.accordion-card-hidden').toggleClass('on');
@@ -406,12 +351,10 @@
 </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<!--<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-<!--<script src="node_modules/@splidejs/splide/dist/js/splide.min.js"></script>-->
 </body>
 
 </html>

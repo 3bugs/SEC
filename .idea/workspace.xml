@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1548bc61-0a34-4e42-9ee9-4e634911b6a4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/survey.html" beforeDir="false" afterPath="$PROJECT_DIR$/survey.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,7 +73,7 @@
       <workItem from="1602036461671" duration="16941000" />
       <workItem from="1602060234583" duration="22063000" />
       <workItem from="1602131725342" duration="50626000" />
-      <workItem from="1602216369617" duration="10074000" />
+      <workItem from="1602216369617" duration="11615000" />
     </task>
     <task id="LOCAL-00001" summary="หน้า index.html">
       <created>1601772191768</created>
@@ -276,7 +278,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602227510910</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="ปรับ ปุ่มถัดไป">
+      <created>1602227752345</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1602227752345</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -293,7 +302,8 @@
     <MESSAGE value="หน้า survey" />
     <MESSAGE value="เพิ่มปุ่มย้อนกลับ, เพิ่ม mock คำถาม" />
     <MESSAGE value="disable ปุ่มถัดไป ถ้ายังไม่เลือกตัวเลือก" />
-    <option name="LAST_COMMIT_MESSAGE" value="disable ปุ่มถัดไป ถ้ายังไม่เลือกตัวเลือก" />
+    <MESSAGE value="ปรับ ปุ่มถัดไป" />
+    <option name="LAST_COMMIT_MESSAGE" value="ปรับ ปุ่มถัดไป" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1920" y="197" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601617425493">
@@ -304,11 +314,11 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2096" y="304" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.24.1920.1056/1920.0.1920.1080@1920.0.1920.1080" timestamp="1601613832291" />
-    <state x="1431" y="33" width="1920" height="1056" key="CommitChangelistDialog2" timestamp="1602227510805">
+    <state x="1431" y="33" width="1920" height="1056" key="CommitChangelistDialog2" timestamp="1602227752266">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state x="0" y="336" width="1366" height="744" key="CommitChangelistDialog2/1366.0.1920.1080/0.312.1366.768@0.312.1366.768" timestamp="1602095549176" />
-    <state x="1431" y="33" width="1855" height="1047" key="CommitChangelistDialog2/1366.0.1920.1080/0.312.1366.768@1366.0.1920.1080" timestamp="1602227510805" />
+    <state x="1431" y="33" width="1855" height="1047" key="CommitChangelistDialog2/1366.0.1920.1080/0.312.1366.768@1366.0.1920.1080" timestamp="1602227752266" />
     <state x="1920" y="24" width="1920" height="1056" key="CommitChangelistDialog2/65.24.1855.1056/1920.0.1920.1080@1920.0.1920.1080" timestamp="1602187669532" />
     <state x="65" y="24" width="1855" height="1056" key="CommitChangelistDialog2/65.24.1855.1056@65.24.1855.1056" timestamp="1601975872365" />
     <state x="2225" y="439" width="743" height="198" key="Github.ShareDialog" timestamp="1601637012323">
@@ -319,11 +329,11 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2130" y="225" key="Github.UntrackedFilesDialog/0.24.1920.1056/1920.0.1920.1080@1920.0.1920.1080" timestamp="1601637023762" />
-    <state x="1925" y="276" key="Vcs.Push.Dialog.v2" timestamp="1602227512170">
+    <state x="1925" y="276" key="Vcs.Push.Dialog.v2" timestamp="1602227753437">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state x="398" y="508" key="Vcs.Push.Dialog.v2/1366.0.1920.1080/0.312.1366.768@0.312.1366.768" timestamp="1602095551041" />
-    <state x="1925" y="276" key="Vcs.Push.Dialog.v2/1366.0.1920.1080/0.312.1366.768@1366.0.1920.1080" timestamp="1602227512170" />
+    <state x="1925" y="276" key="Vcs.Push.Dialog.v2/1366.0.1920.1080/0.312.1366.768@1366.0.1920.1080" timestamp="1602227753437" />
     <state x="2480" y="275" key="Vcs.Push.Dialog.v2/65.24.1855.1056/1920.0.1920.1080@1920.0.1920.1080" timestamp="1602187670775" />
     <state x="606" y="293" key="Vcs.Push.Dialog.v2/65.24.1855.1056@65.24.1855.1056" timestamp="1601975879685" />
     <state x="1531" y="68" width="1655" height="912" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1601997830077">
