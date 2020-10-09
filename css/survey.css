@@ -36,6 +36,12 @@ h3 {
   line-height: 1.5em;
 }
 
+p {
+  color: #003558;
+  opacity: 0.6;
+  mix-blend-mode: normal;
+}
+
 button {
   background: #10375C;
   border-radius: 6px;
@@ -121,17 +127,6 @@ button:disabled {
   font-size: 16px;
   line-height: 120%;
   color: #BDBDBD;
-}
-
-.disclaim {
-  font-family: Sarabun;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 180%;
-  color: #003558;
-  mix-blend-mode: normal;
-  opacity: 0.6;
 }
 
 .survey-form-container {
