@@ -150,7 +150,7 @@ button:disabled {
 .survey-options > li {
   display: flex;
   position: relative;
-  flex: 1;
+  flex: 2;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -160,6 +160,10 @@ button:disabled {
   border: 1px solid #E0E0E0;
   cursor: pointer;
   z-index: 998;
+}
+
+.survey-options > div.empty {
+  flex: 1;
 }
 
 .survey-options > li:hover {

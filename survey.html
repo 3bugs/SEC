@@ -155,38 +155,67 @@
       questionText: 'โปรดเลือกข้อมูลที่ตรงกับท่าน',
       choiceList: [
         {text: 'คุณได้ทำการ\nจดทะเบียนบริษัท', value: false, nextQuestion: 1},
-        {text: 'คุณไม่เคย\nจดทะเบียนบริษัท', value: false, nextQuestion: 2},
-        {text: 'คุณคือวิสาหกิจ\nเพื่อสังคม', value: false, nextQuestion: 0},
+        {text: 'คุณไม่เคย\nจดทะเบียนบริษัท', value: false, nextQuestion: 1},
+        {text: 'คุณคือวิสาหกิจ\nเพื่อสังคม', value: false, nextQuestion: 1},
       ],
       buttonText: null,
       buttonIconClass: null,
     },
     {
-      questionText: 'หัวข้อคำถามข้อที่ 2',
+      questionText: 'ประเภทสิ่งมีชีวิต',
       choiceList: [
-        {text: 'ตัวเลือก\nลำดับที่ 2.1', value: false, nextQuestion: 2},
-        {text: 'ตัวเลือก\nลำดับที่ 2.2', value: false, nextQuestion: 2},
-        {text: 'ตัวเลือก\nลำดับที่ 2.3', value: false, nextQuestion: 0},
+        {text: 'คน', value: false, nextQuestion: 2},
+        {text: 'สัตว์', value: false, nextQuestion: 3},
+        {text: 'พืช', value: false, nextQuestion: -1},
       ],
       buttonText: null,
       buttonIconClass: null,
     },
     {
-      questionText: 'หัวข้อคำถามข้อที่ 3',
+      questionText: 'เพศ',
       choiceList: [
-        {text: 'ตัวเลือก\nลำดับที่ 3.1', value: false, nextQuestion: 0},
-        {text: 'ตัวเลือก\nลำดับที่ 3.2', value: false, nextQuestion: 0},
-        {text: 'ตัวเลือก\nลำดับที่ 3.3', value: false, nextQuestion: 0},
+        {text: 'ผู้หญิง', value: false, nextQuestion: -1},
+        {text: 'ผู้ชาย', value: false, nextQuestion: -1},
       ],
       buttonText: null,
       buttonIconClass: null,
     },
     {
-      questionText: 'หัวข้อคำถามข้อที่ 4',
+      questionText: 'ประเภทสัตว์',
       choiceList: [
-        {text: 'ตัวเลือก\nลำดับที่ 4.1', value: false},
-        {text: 'ตัวเลือก\nลำดับที่ 4.2', value: false},
-        {text: 'ตัวเลือก\nลำดับที่ 4.3', value: false},
+        {text: 'สัตว์เลี้ยงลูก\nด้วยนม', value: false, nextQuestion: 4},
+        {text: 'สัตว์สะเทินน้ำ\nสะเทินบก', value: false, nextQuestion: 5},
+        {text: 'สัตว์เลื้อยคลาน', value: false, nextQuestion: 6},
+      ],
+      buttonText: null,
+      buttonIconClass: null,
+    },
+    {
+      questionText: 'สัตว์เลี้ยงลูกด้วยนม',
+      choiceList: [
+        {text: 'กระต่าย', value: false, nextQuestion: -1},
+        {text: 'ช้าง', value: false, nextQuestion: -1},
+        {text: 'โลมา', value: false, nextQuestion: -1},
+      ],
+      buttonText: null,
+      buttonIconClass: null,
+    },
+    {
+      questionText: 'สัตว์สะเทินน้ำสะเทินบก',
+      choiceList: [
+        {text: 'กบ', value: false, nextQuestion: -1},
+        {text: 'ซาลามานเดอร์', value: false, nextQuestion: -1},
+        {text: 'ตัวเงินตัวทอง', value: false, nextQuestion: -1},
+      ],
+      buttonText: null,
+      buttonIconClass: null,
+    },
+    {
+      questionText: 'สัตว์เลื้อยคลาน',
+      choiceList: [
+        {text: 'งู', value: false, nextQuestion: -1},
+        {text: 'กิ้งก่า', value: false, nextQuestion: -1},
+        {text: 'เต่า', value: false, nextQuestion: -1},
       ],
       buttonText: null,
       buttonIconClass: null,
@@ -220,35 +249,43 @@
 
   Vue.component('surveyForm', {
     template: `
-      <div class="survey-form-container">
       <div
-        v-for="(q, questionIndex) in questionList"
-        :id="'survey-form-' + questionIndex"
+        :id="'survey-form'"
         class="survey-form"
-        :style="'display: ' + getDisplay(questionIndex)"
+        :style="'display: flex'"
       >
-        <h3 class="color-inactive mt-5">คำถามที่ {{ (questionIndex + 1).toString() }}</h3>
-        <h1>{{ q.questionText }}</h1>
+        <h3 class="color-inactive mt-5">คำถามที่ {{ (questionHistoryList.length + 1).toString() }}</h3>
+        <h1>{{ currentQuestion.questionText }}</h1>
         <ul class="survey-options mt-4">
+          <div class="empty" v-if="currentQuestion.choiceList.length === 2"></div>
           <li
-            v-for="(choice, optionIndex) in q.choiceList"
-            :class="getClass(optionIndex, choice.value, q.choiceList)"
-            v-on:click="() => handleClickOption(questionIndex, optionIndex)"
+            v-for="(choice, optionIndex) in currentQuestion.choiceList"
+            :class="getClass(optionIndex, choice.value, currentQuestion.choiceList)"
+            v-on:click="() => handleClickOption(optionIndex)"
           >
             <h2><span style="white-space: pre;">{{ choice.text }}</span></h2>
             <div class="survey-option-badge" v-if="choice.value">
               <i class="fa fa-check" style="color: white"></i>
             </div>
           </li>
+          <div class="empty" v-if="currentQuestion.choiceList.length === 2"></div>
         </ul>
         <div class="button-container">
+          <button
+            v-bind:style="{zIndex: 1000, display: questionHistoryList.length === 0 ? 'none' : 'block'}"
+            v-on:click="handleClickPrevious"
+          >
+            <h5><i class="fa fa-chevron-left"></i>
+              &nbsp;&nbsp;ย้อนกลับ
+            </h5>
+          </button>
+          <div class="m-2"></div>
           <button style="z-index: 1000" v-on:click="handleClickNext">
-            <h5>{{ q.buttonText == null ? 'ต่อไป' : q.buttonText }}&nbsp;&nbsp;
-              <i :class="q.buttonIconClass == null ? 'fa fa-chevron-right' : q.buttonIconClass"></i>
+            <h5>{{ currentQuestion.buttonText == null ? 'ต่อไป' : currentQuestion.buttonText }}&nbsp;&nbsp;
+              <i :class="currentQuestion.buttonIconClass == null ? 'fa fa-chevron-right' : currentQuestion.buttonIconClass"></i>
             </h5>
           </button>
         </div>
-      </div>
       </div>
     `,
     props: {
@@ -268,7 +305,9 @@
     data: function () {
       return {
         questionList,
-        currentQuestion: 0,
+        questionHistoryList: [],
+        currentQuestion: questionList[0],
+        questionNumber: 1,
       }
     },
     methods: {
@@ -282,40 +321,43 @@
         }
         return cl;
       },
-      getDisplay(index) {
-        return index === this.currentQuestion ? 'flex' : 'none';
+      handleClickOption(optionIndex) {
+        this.currentQuestion.choiceList.forEach(choice => choice.value = false);
+        this.currentQuestion.choiceList[optionIndex].value = true;
       },
-      handleClickOption(questionIndex, optionIndex) {
-        this.questionList[this.currentQuestion].choiceList.forEach(choice => choice.value = false);
-        this.questionList[this.currentQuestion].choiceList[optionIndex].value = true;
-      },
-      handleClickNext() {
-        if (this.questionList[this.currentQuestion].choiceList.find(choice => choice.value) == null) {
-          alert('กรุณาเลือกคำตอบ');
-          return;
-        } else if (this.currentQuestion === this.questionList.length - 1) {
-          alert('จบ flow, หน้าสรุปผลยังทำไม่เสร็จ :D');
+      handleClickPrevious() {
+        if (this.questionHistoryList.length === 0) {
           return;
         }
 
-        const currentForm = $('#survey-form-' + this.currentQuestion);
-        const nextForm = $('#survey-form-' + (this.currentQuestion + 1));
-        currentForm.fadeOut(500, () => {
-          nextForm.fadeIn(500, () => {
-            this.currentQuestion++;
+        this.changeQuestion(() => {
+          this.currentQuestion = this.questionHistoryList.pop();
+        });
+      },
+      handleClickNext() {
+        const selectedChoice = this.currentQuestion.choiceList.find(choice => choice.value);
+
+        if (selectedChoice == null) {
+          alert('กรุณาเลือกคำตอบ');
+          return;
+        } else if (selectedChoice.nextQuestion === -1) {
+          alert('จบ flow, หน้าผลลัพธ์ยังทำไม่เสร็จ - coming soon :D');
+          return;
+        }
+
+        this.changeQuestion(() => {
+          this.questionHistoryList.push(this.currentQuestion);
+          this.currentQuestion = this.questionList[selectedChoice.nextQuestion];
+        });
+      },
+      changeQuestion(func) {
+        const surveyForm = $('#survey-form');
+        surveyForm.fadeOut(300, () => {
+          func();
+          surveyForm.fadeIn(300, () => {
           })
         });
-
-        const currentQuestion = this.currentQuestion;
-        $('.step-line li').each((index, element) => {
-          console.log($(this).hasClass('active'));
-
-          $(this).removeClass('active');
-          if (index === currentQuestion) {
-            $(this).addClass('active');
-          }
-        });
-      }
+      },
     }
   });
 
