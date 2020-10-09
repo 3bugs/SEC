@@ -285,7 +285,7 @@
             v-on:click="handleClickNext"
             :disabled="currentQuestion.choiceList.find(choice => choice.value) == null"
           >
-            <h5>{{ currentQuestion.buttonText == null ? 'ต่อไป' : currentQuestion.buttonText }}&nbsp;&nbsp;
+            <h5>{{ currentQuestion.buttonText == null ? 'ถัดไป' : currentQuestion.buttonText }}&nbsp;&nbsp;
               <i :class="currentQuestion.buttonIconClass == null ? 'fa fa-chevron-right' : currentQuestion.buttonIconClass"></i>
             </h5>
           </button>

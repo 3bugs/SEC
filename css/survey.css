@@ -42,11 +42,15 @@ button {
   background: #10375C;
   border-radius: 6px;
   padding: 12px 25px;
-  cursor: pointer;
 }
 
 button:hover:enabled {
   filter: brightness(140%);
+  cursor: pointer;
+}
+
+button:hover:disabled {
+  cursor: not-allowed;
 }
 
 button:disabled {
