@@ -130,7 +130,7 @@
     </div>
   </div>
 
-  <div class="survey-footer p-3 color-inactive text-center">
+  <div class="survey-footer p-3 mr-0 color-inactive text-center">
     <div class="container">
       <div class="row mb-2">
         <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-2"><a href="#">Link goes here</a></div>
@@ -372,6 +372,7 @@
         const surveyBegin = $('.survey-begin');
         const surveyForm = $('#survey-form');
         surveyBegin.fadeOut(300, () => {
+          $('.survey-footer').removeClass('mr-0');
           window.scrollTo(0, 0);
           surveyForm.fadeIn(300, () => {
             this.imageVisible = true;
@@ -391,6 +392,7 @@
         const surveyEnd = $('.survey-end');
         const surveyForm = $('#survey-form');
         surveyForm.fadeOut(300, () => {
+          $('.survey-footer').addClass('mr-0');
           this.resultText = result;
           this.imageVisible = false;
           window.scrollTo(0, 0);
