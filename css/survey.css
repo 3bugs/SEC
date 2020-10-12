@@ -203,7 +203,7 @@ button:disabled {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 120px;
+  min-height: 100px;
   box-sizing: border-box;
   background: #FBFBFB;
   border: 1px solid #E0E0E0;
