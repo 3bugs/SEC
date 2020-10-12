@@ -263,7 +263,7 @@
           :class="getClass(optionIndex, choice.value, currentQuestion.choiceList)"
           v-on:click="() => handleClickOption(optionIndex)"
         >
-          <h2 class="mt-4 mb-4"><span style="white-space: pre;">{{ choice.text }}</span></h2>
+          <h2 class="mt-3 mb-3"><span style="white-space: pre;">{{ choice.text }}</span></h2>
           <div class="survey-option-badge" v-if="choice.value">
             <i class="fa fa-check" style="color: white"></i>
           </div>
